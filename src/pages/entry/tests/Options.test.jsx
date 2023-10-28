@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 import Options from "../Options";
 
-test("displays image for each scoop option from the mock server", async() => {
+test("displays image for each scoop option from the mock server", async () => {
   render(<Options optionType="scoops" />);
 
   //find images
@@ -13,14 +13,20 @@ test("displays image for each scoop option from the mock server", async() => {
   expect(altText).toEqual(["Chocolate Scoop", "Vanilla Scoop"]);
 });
 
-test("displays image for each topping option from the mock server", async() => {
-  render(<Options optionType="toppings" />)
+test("displays image for each topping option from the mock server", async () => {
+  render(<Options optionType="toppings" />);
 
   //find images
-  const toppingImages = await screen.findAllByRole("img", { name: /topping$/i });
+  const toppingImages = await screen.findAllByRole("img", {
+    name: /topping$/i,
+  });
   expect(toppingImages).toHaveLength(3);
 
   //confirm alt text of images
   const altText = toppingImages.map((element) => element.alt);
-  expect(altText).toEqual(["Cherries Topping", "M&Ms Topping", "Hot Fudge Topping"]);
-})
+  expect(altText).toEqual([
+    "Cherries Topping",
+    "M&Ms Topping",
+    "Hot Fudge Topping",
+  ]);
+});
