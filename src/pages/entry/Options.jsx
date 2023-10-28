@@ -5,7 +5,7 @@ import ToppingOption from "./ToppingOption";
 import { Row } from "react-bootstrap";
 import AlertBanner from "../common/AlertBanner";
 
-export default Options = ({ optionType }) => {
+const Options = ({ optionType }) => {
   const [items, setTimes] = useState([]);
   const [isError, setIsError] = useState(false);
 
@@ -35,3 +35,5 @@ export default Options = ({ optionType }) => {
 
   return <Row>{optionItems}</Row>;
 };
+
+export default Options;

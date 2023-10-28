@@ -1,6 +1,6 @@
 import { Alert } from "react-bootstrap";
 
-export default AlertBanner = ({ message, variant }) => {
+const AlertBanner = ({ message, variant }) => {
   const alertMessage =
     message || "An unexpected error occured. Please try again later.";
 
@@ -12,3 +12,5 @@ export default AlertBanner = ({ message, variant }) => {
     </Alert>
   );
 };
+
+export default AlertBanner;

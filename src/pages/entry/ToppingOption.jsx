@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 
-export default ToppingOption = ({ name, imagePath }) => {
+const ToppingOption = ({ name, imagePath }) => {
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: "center" }}>
       <img
@@ -11,3 +11,5 @@ export default ToppingOption = ({ name, imagePath }) => {
     </Col>
   );
 };
+
+export default ToppingOption;
