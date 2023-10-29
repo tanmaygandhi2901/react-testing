@@ -23,7 +23,7 @@ const Options = ({ optionType }) => {
         setItems(response.data);
       })
       .catch((err) => {
-        if (err.name !== "CancelledError") {
+        if (err.name !== "CanceledError") {
           setIsError(true);
         }
       });
